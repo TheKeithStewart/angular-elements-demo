@@ -534,7 +534,7 @@ function(e,t){var n=e.childNodes,r=t.map(function(){return[]}),o=-1;t.some(funct
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
- */var Ma=function(){return function(){this.title="app"}}(),Va=function(){function e(e){this.injector=e}return e.prototype.ngDoBootstrap=function(){var e=Ra(Ma,{injector:this.injector});customElements.define("custom-element",e)},e}(),ja=function(e){return{id:Lr,styles:e.styles,encapsulation:e.encapsulation,data:e.data}}({encapsulation:0,styles:[[""]],data:{}});
+ */var Ma=function(){return function(){this.title="app"}}(),Va=function(){function e(e){this.injector=e}return e.prototype.ngDoBootstrap=function(){var e=Ra(Ma,{injector:this.injector});customElements.define("dynamic-form-element",e)},e}(),ja=function(e){return{id:Lr,styles:e.styles,encapsulation:e.encapsulation,data:e.data}}({encapsulation:0,styles:[[""]],data:{}});
 /**
  * @license
  * Copyright Google Inc. All Rights Reserved.

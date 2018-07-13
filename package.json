@@ -8,9 +8,13 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "build:elements": "npm run build:dynamic-form-element && npm run build:header-element",
     "build:dynamic-form-element": "npm run bundle:dynamic-form-element && npm run copy:dynamic-form-element",
     "copy:dynamic-form-element": "cpr dist/dynamic-form-element/main.js src/assets/dynamic-form-element.bundle.js -o",
-    "bundle:dynamic-form-element": "ng build --project dynamic-form-element --prod --output-hashing none"
+    "bundle:dynamic-form-element": "ng build --project dynamic-form-element --prod --output-hashing none",
+    "build:header-element": "npm run bundle:header-element && npm run copy:header-element",
+    "copy:header-element": "cpr dist/header-element/main.js src/assets/header-element.bundle.js -o",
+    "bundle:header-element": "ng build --project header-element --prod --output-hashing none"
   },
   "private": true,
   "dependencies": {

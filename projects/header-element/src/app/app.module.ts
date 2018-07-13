@@ -18,6 +18,6 @@ export class AppModule {
 
   ngDoBootstrap() {
       const elm = createCustomElement(AppComponent, { injector: this.injector });
-      customElements.define('dynamic-form-element', elm);
+      customElements.define('header-element', elm);
   }
 }
