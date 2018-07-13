@@ -10,11 +10,22 @@
     "e2e": "ng e2e",
     "build:elements": "npm run build:dynamic-form-element && npm run build:header-element",
     "build:dynamic-form-element": "npm run bundle:dynamic-form-element && npm run copy:dynamic-form-element",
-    "copy:dynamic-form-element": "cpr dist/dynamic-form-element/main.js src/assets/dynamic-form-element.bundle.js -o",
+    "copy:dynamic-form-element": "npm run copy:dynamic-form-element-angular && npm run copy:dynamic-form-element-vanilla && npm run copy:dynamic-form-element-react && npm run copy:dynamic-form-element-vue",
+    "copy:dynamic-form-element-angular": "cpr dist/dynamic-form-element/main.js src/assets/dynamic-form-element.bundle.js -o",
+    "copy:dynamic-form-element-vanilla": "cpr dist/dynamic-form-element/main.js demos/vanilla-js/dynamic-form-element.bundle.js -o",
+    "copy:dynamic-form-element-react": "cpr dist/dynamic-form-element/main.js demos/react-app/public/dynamic-form-element.bundle.js -o",
+    "copy:dynamic-form-element-vue": "cpr dist/dynamic-form-element/main.js demos/vue-app/public/dynamic-form-element.bundle.js -o",
     "bundle:dynamic-form-element": "ng build --project dynamic-form-element --prod --output-hashing none",
     "build:header-element": "npm run bundle:header-element && npm run copy:header-element",
-    "copy:header-element": "cpr dist/header-element/main.js src/assets/header-element.bundle.js -o",
-    "bundle:header-element": "ng build --project header-element --prod --output-hashing none"
+    "copy:header-element": "npm run copy:header-element-angular && npm run copy:header-element-vanilla && npm run copy:header-element-react && npm run copy:header-element-vue",
+    "copy:header-element-angular": "cpr dist/header-element/main.js src/assets/header-element.bundle.js -o",
+    "copy:header-element-vanilla": "cpr dist/header-element/main.js demos/vanilla-js/header-element.bundle.js -o",
+    "copy:header-element-react": "cpr dist/header-element/main.js demos/react-app/public/header-element.bundle.js -o",
+    "copy:header-element-vue": "cpr dist/header-element/main.js demos/vue-app/public/header-element.bundle.js -o",
+    "bundle:header-element": "ng build --project header-element --prod --output-hashing none",
+    "start:vanilla": "lite-server --baseDir='demos/vanilla-js' --config='demos/vanilla-js/server-config.json'",
+    "start:react": "cd demos/react-app && npm start",
+    "start:vue": "cd demos/vue-app && npm start"
   },
   "private": true,
   "dependencies": {
@@ -35,10 +46,9 @@
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
-    "@angular/compiler-cli": "^6.0.0",
     "@angular-devkit/build-angular": "~0.6.0",
-    "typescript": "~2.7.2",
     "@angular/cli": "~6.0.0",
+    "@angular/compiler-cli": "^6.0.0",
     "@angular/language-service": "^6.0.0",
     "@types/jasmine": "~2.8.6",
     "@types/jasminewd2": "~2.0.3",
@@ -52,9 +62,11 @@
     "karma-coverage-istanbul-reporter": "~1.4.2",
     "karma-jasmine": "~1.1.1",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "lite-server": "^2.4.0",
     "ngx-build-plus": "^1.1.0",
     "protractor": "~5.3.0",
     "ts-node": "~5.0.1",
-    "tslint": "~5.9.1"
+    "tslint": "~5.9.1",
+    "typescript": "~2.7.2"
   }
 }
