@@ -1,20 +1,19 @@
-import { Component } from '@angular/core';
-
-import { QuestionService } from './question.service';
+import { Component, Input } from '@angular/core';
 
 @Component({
   template: `
     <div>
       <h2>Job Application for Heroes</h2>
-      <app-dynamic-form [questions]="questions"></app-dynamic-form>
+      <app-dynamic-form [questions]="_questions"></app-dynamic-form>
     </div>
-  `,
-  providers: [QuestionService]
+  `
 })
 export class AppComponent {
-  questions: any[];
-
-  constructor(service: QuestionService) {
-    this.questions = service.getQuestions();
+  _questions: any[] = [];
+  @Input()
+  set questions(questions) {
+    this._questions = JSON.parse(questions);
   }
+
+  constructor() {}
 }
