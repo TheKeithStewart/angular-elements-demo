@@ -1,10 +1,10 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   template: `
     <div>
       <h2>Job Application for Heroes</h2>
-      <app-dynamic-form [questions]="_questions"></app-dynamic-form>
+      <app-dynamic-form (payload)="onSubmit($event)" [questions]="_questions"></app-dynamic-form>
     </div>
   `
 })
@@ -15,5 +15,11 @@ export class AppComponent {
     this._questions = JSON.parse(questions);
   }
 
+  @Output() payload = new EventEmitter();
+
   constructor() {}
+
+  onSubmit(payload) {
+    this.payload.emit(payload);
+  }
 }

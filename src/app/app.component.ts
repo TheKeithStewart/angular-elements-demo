@@ -40,4 +40,8 @@ export class AppComponent {
       ]
     }
   ];
+
+  getQuestions() {
+    return JSON.stringify(this.questions);
+  }
 }
