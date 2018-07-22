@@ -3,12 +3,15 @@
 
   <div [ngSwitch]="question.controlType">
 
-    <input *ngSwitchCase="'textbox'" [formControlName]="question.key"
-            [id]="question.key" [type]="question.type">
-
-    <select [id]="question.key" *ngSwitchCase="'dropdown'" [formControlName]="question.key">
-      <option *ngFor="let opt of question.options" [value]="opt.key">{{opt.value}}</option>
-    </select>
+    <mat-form-field *ngSwitchCase="'textbox'" (click)="blah()">
+      <input matInput [formControlName]="question.key" [placeholder]="question.label" [id]="question.key" [type]="question.type">
+    </mat-form-field>
+    
+    <mat-form-field *ngSwitchCase="'dropdown'" (click)="blah()">
+      <mat-select [placeholder]="question.label" [id]="question.key" [formControlName]="question.key">
+        <mat-option *ngFor="let opt of question.options" [value]="opt.key">{{opt.value}}</mat-option>
+      </mat-select>
+    </mat-form-field>
 
   </div> 
 

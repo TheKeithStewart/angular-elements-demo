@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
 import { QuestionBase } from '../models/question-base';
@@ -7,7 +7,8 @@ import { QuestionControlService } from '../models/question-control.service';
 @Component({
   selector: 'app-dynamic-form',
   templateUrl: './dynamic-form.component.html',
-  providers: [QuestionControlService]
+  providers: [QuestionControlService],
+  encapsulation: ViewEncapsulation.None
 })
 export class DynamicFormComponent implements OnInit {
   @Input() questions: QuestionBase<any>[] = [];

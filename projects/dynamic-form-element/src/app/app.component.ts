@@ -1,12 +1,9 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  template: `
-    <div>
-      <h2>Job Application for Heroes</h2>
-      <app-dynamic-form (payload)="onSubmit($event)" [questions]="_questions"></app-dynamic-form>
-    </div>
-  `
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
   _questions: any[] = [];
