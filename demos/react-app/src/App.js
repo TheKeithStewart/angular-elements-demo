@@ -27,24 +27,27 @@ class App extends Component {
 
         <div className="form-container">
           <Header title="Non-Dynamic Form" />
+          <card-element>
+            <div>
+              <Input placeholder="blah" />
+            </div>
 
-          <div>
-            <Input placeholder="blah" />
-          </div>
+            <div>
+              <Input placeholder="test" />
+            </div>
 
-          <div>
-            <Input placeholder="test" />
-          </div>
-
-          <div>
-            <Select placeholder="The Select" options={options} />
-          </div>
+            <div>
+              <Select placeholder="The Select" options={options} />
+            </div>
+          </card-element>
         </div>
 
         <div className="form-container">
           <Header title="Dynamic Form" />
 
-          <DynamicForm />
+          <card-element>
+            <DynamicForm />
+          </card-element>
         </div>
       </div>
     );
