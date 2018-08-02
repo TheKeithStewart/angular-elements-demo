@@ -58,9 +58,15 @@ class App extends Component {
   }
 
   render() {
+    var options = JSON.stringify([
+      { value: '1', viewValue: 'Value 1' },
+      { value: '2', viewValue: 'Value 2' },
+      { value: '3', viewValue: 'Value 3' },
+    ]);
+
     return (
       <div className="App">
-        <header-element title='Blah' />
+        <header-element ref={this._handleRef} title='Blah' />
 
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
@@ -70,7 +76,19 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
 
-        <dynamic-form-element ref={this._handleRef} questions={JSON.stringify(this.state.questions)} />
+        {/* <dynamic-form-element ref={this._handleRef} questions={JSON.stringify(this.state.questions)} /> */}
+
+        <div>
+          <input-element placeholder="blah" />
+        </div>
+
+        <div>
+          <input-element placeholder="test" />
+        </div>
+
+        <div>
+          <select-element placeholder="The Select" options={options} />
+        </div>
       </div>
     );
   }

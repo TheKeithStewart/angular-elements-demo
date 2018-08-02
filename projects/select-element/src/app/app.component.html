@@ -1,0 +1,7 @@
+<mat-form-field (click)="detectChanges()">
+  <mat-select #control (openedChange)="handleOpenChanged()" [placeholder]="placeholder">
+    <mat-option *ngFor="let option of _options" [value]="option.value">
+      {{option.viewValue}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
