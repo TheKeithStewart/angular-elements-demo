@@ -15,9 +15,9 @@ export class DynamicFormQuestionComponent {
     return this.form.controls[this.question.key].valid;
   }
 
-  constructor(private changeDetectionRef: ChangeDetectorRef) {}
+  constructor(private changeDetectorRef: ChangeDetectorRef) {}
 
-  blah() {
-    this.changeDetectionRef.detectChanges();
+  detectChanges() {
+    this.changeDetectorRef.detectChanges();
   }
 }

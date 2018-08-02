@@ -1,19 +1,17 @@
 <div [formGroup]="form">
-  <label [attr.for]="question.key">{{question.label}}</label>
-
   <div [ngSwitch]="question.controlType">
 
     <mat-form-field *ngSwitchCase="'textbox'" (click)="blah()">
-      <input matInput [formControlName]="question.key" [placeholder]="question.label" [id]="question.key" [type]="question.type">
+      <input matInput [formControlName]="question.key" [placeholder]="question.label" [id]="question.key" [type]="question.type" (focus)="detectChanges()" (focusout)="detectChanges()">
+      <mat-error *ngIf="form.get(question.key).invalid">This field is required</mat-error>
     </mat-form-field>
     
     <mat-form-field *ngSwitchCase="'dropdown'" (click)="blah()">
-      <mat-select [placeholder]="question.label" [id]="question.key" [formControlName]="question.key">
+      <mat-select [placeholder]="question.label" [id]="question.key" [formControlName]="question.key" (click)="detectChanges()">
         <mat-option *ngFor="let opt of question.options" [value]="opt.key">{{opt.value}}</mat-option>
       </mat-select>
+      <mat-error *ngIf="form.get(question.key).invalid">This field is required</mat-error>
     </mat-form-field>
 
   </div> 
-
-  <div class="errorMessage" *ngIf="!isValid">{{question.label}} is required</div>
 </div>

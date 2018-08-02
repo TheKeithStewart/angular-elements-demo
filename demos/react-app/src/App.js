@@ -5,6 +5,7 @@ import './App.css';
 import { Header } from './element-wrappers/Header';
 import { Input } from './element-wrappers/Input';
 import { Select } from './element-wrappers/Select';
+import { DynamicForm } from './element-wrappers/Dynamic-Form';
 
 class App extends Component {
   render() {
@@ -24,8 +25,8 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
 
-        <div className="main-container">
-          <Header title="The React App" />
+        <div className="form-container">
+          <Header title="Non-Dynamic Form" />
 
           <div>
             <Input placeholder="blah" />
@@ -38,6 +39,12 @@ class App extends Component {
           <div>
             <Select placeholder="The Select" options={options} />
           </div>
+        </div>
+
+        <div className="form-container">
+          <Header title="Dynamic Form" />
+
+          <DynamicForm />
         </div>
       </div>
     );

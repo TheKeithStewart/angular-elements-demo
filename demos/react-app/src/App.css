@@ -29,7 +29,7 @@
   to { transform: rotate(360deg); }
 }
 
-.main-container {
+.form-container {
   width: 500px;
   align-self: center;
 }
