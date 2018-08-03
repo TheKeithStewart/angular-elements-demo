@@ -29,15 +29,15 @@ class App extends Component {
           <Header title="Non-Dynamic Form" />
           <card-element>
             <div>
-              <Input placeholder="blah" />
+              <Input placeholder="First Name" />
             </div>
 
             <div>
-              <Input placeholder="test" />
+              <Input placeholder="Last Name" />
             </div>
 
             <div>
-              <Select placeholder="The Select" options={options} />
+              <Select placeholder="A Select With Some Options" options={options} />
             </div>
           </card-element>
         </div>

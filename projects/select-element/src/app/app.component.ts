@@ -22,7 +22,6 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.select.open();
     this.detectChanges();
-    console.log(this.select.panel);
   }
 
   detectChanges() {
@@ -31,10 +30,5 @@ export class AppComponent implements OnInit {
 
   handleOpenChanged() {
     this.select._offsetY = 1;
-    // console.log(this.select.panelOpen);
-    // this.select.toggle();
-    // console.log(this.select.panelOpen);
-    // this.select.toggle();
-    // console.log(this.select.panelOpen);
   }
 }

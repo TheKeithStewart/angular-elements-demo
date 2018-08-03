@@ -542,7 +542,7 @@ function(t,e){var n=t.childNodes,r=e.map(function(){return[]}),i=-1;e.some(funct
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
- */var Xa=function(){function t(t){this.changeDetectorRef=t}return Object.defineProperty(t.prototype,"options",{set:function(t){this._options=JSON.parse(t)},enumerable:!0,configurable:!0}),t.prototype.ngOnInit=function(){this.select.open(),this.detectChanges(),console.log(this.select.panel)},t.prototype.detectChanges=function(){this.changeDetectorRef.detectChanges()},t.prototype.handleOpenChanged=function(){this.select._offsetY=1},t}(),$a=function(){function t(t){this.injector=t}return t.prototype.ngDoBootstrap=function(){var t=Wa(Xa,{injector:this.injector});customElements.define("select-element",t)},t}();
+ */var Xa=function(){function t(t){this.changeDetectorRef=t}return Object.defineProperty(t.prototype,"options",{set:function(t){this._options=JSON.parse(t)},enumerable:!0,configurable:!0}),t.prototype.ngOnInit=function(){this.select.open(),this.detectChanges()},t.prototype.detectChanges=function(){this.changeDetectorRef.detectChanges()},t.prototype.handleOpenChanged=function(){this.select._offsetY=1},t}(),$a=function(){function t(t){this.injector=t}return t.prototype.ngDoBootstrap=function(){var t=Wa(Xa,{injector:this.injector});customElements.define("select-element",t)},t}();
 /**
  * @license
  * Copyright Google Inc. All Rights Reserved.

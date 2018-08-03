@@ -6,8 +6,8 @@
       <div class="form-container">
         <Header title="Non-Dynamic Form" />
         <card-element>
-          <Input placeholder="test" />
-          <Select placeholder="blah" v-bind:options="options" />
+          <Input placeholder="First Name" />
+          <Select placeholder="Some Options" v-bind:options="options" />
         </card-element>
       </div>
 
